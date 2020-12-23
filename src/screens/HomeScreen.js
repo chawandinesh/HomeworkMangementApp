@@ -10,7 +10,7 @@ import {
 import {Container, Content, Header, Button, Icon, Fab} from 'native-base';
 import {Row, Col, Grid} from 'react-native-easy-grid';
 
-export default function HomeScreen() {
+export default function HomeScreen(props) {
   const {height, width} = Dimensions.get('window');
   return (
     <Container>
@@ -55,7 +55,7 @@ export default function HomeScreen() {
               alignItems: 'center',
               alignSelf: 'center',
             }}>
-            <Button rounded style={{backgroundColor: '#7752BD', height: 60}}>
+            <Button rounded style={{backgroundColor: '#7752BD', height: 60}} onPress={() => props.navigation.navigate('AddDetailsScreen')}>
               <Text
                 style={{
                   fontWeight: 'bold',
@@ -82,7 +82,7 @@ export default function HomeScreen() {
                 borderRadius: 18,
               }}
               bordered>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() =>  props.navigation.navigate('ShowHomeworkDetails', {type:'pending'})}>
                 <Text
                   style={{
                     fontWeight: 'bold',
@@ -102,7 +102,7 @@ export default function HomeScreen() {
                 borderRadius: 18,
               }}
               bordered>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() =>  props.navigation.navigate('ShowHomeworkDetails', {type: 'completed'})}>
                 <Text
                   style={{
                     fontWeight: 'bold',
@@ -122,7 +122,7 @@ export default function HomeScreen() {
                 borderRadius: 18,
               }}
               bordered>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() =>  props.navigation.navigate('ShowHomeworkDetails',{type: 'all'})}>
                 <Text
                   style={{
                     fontWeight: 'bold',
