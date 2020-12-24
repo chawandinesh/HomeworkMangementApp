@@ -57,20 +57,15 @@ export default function HomeScreen(props) {
           (e) => e.subjectName === props.route.params.subjectName,
         );
         dispatch(atnUpdateHomework(HomeworkState, index));
-      
       } else {
         dispatch(atnAddHomework(HomeworkState));
       }
       setTimeout(() => {
         props.navigation.navigate('HomeScreen');
-        Toast.show({
-          text: "Wrong password!",
-          buttonText: "Okay",
-          duration: 3000
-        })
       }, 1000);
     } else {
       alert('please fill all details');
+      setSubmitSpin(false);
     }
   };
 

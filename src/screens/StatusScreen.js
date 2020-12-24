@@ -251,9 +251,6 @@ function StatusScreen(props) {
           }}>
           <View style={{alignSelf: 'center'}}>
             {getHomeworkDetails()}
-            {/* <View>
-              <Text style>Message</Text>
-            </View> */}
           </View>
         </View>
       </Row>
